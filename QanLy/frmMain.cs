@@ -87,10 +87,10 @@ namespace QanLy
         {
             pnlSinhVien.Visible = true;
             pnlLopHoc.Visible = false;
-            pnlSinhVien.BringToFront(); // Đưa nó lên trên cùng
+            pnlSinhVien.BringToFront();
         }
 
-        // Bấm Menu Quản lý Lớp
+
         private void menuLop_Click(object sender, EventArgs e)
         {
             pnlLopHoc.Visible = true;
@@ -98,16 +98,33 @@ namespace QanLy
             pnlLopHoc.BringToFront();
         }
 
-        // Nút "Xem danh sách sinh viên" ở trong Panel Lớp học
+
         private void btnSwitchToSV_Click(object sender, EventArgs e)
         {
-            // Gọi lại hàm xử lý click menu ở trên
             menuSV_Click(null, null);
+
+        }
+        private void quảnLýSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlSinhVien.Visible = true;
+            pnlSinhVien.BringToFront();
+            // Nếu có panel lớp học thì ẩn đi
+            pnlLopHoc.Visible = false;
         }
         // Khai báo bảng dữ liệu
         DataTable dtSinhVien = new DataTable();
         DataTable dtLopHoc = new DataTable();
 
 
+        private void btnThemSV_Click(object sender, EventArgs e)
+        {
+            dtSinhVien.Rows.Add(txtMaSV.Text, cboGioiTinh.Text, dtpNgaySinh.Text);
+            MessageBox.Show("Thêm sinh viên thành công!", "Thông báo");
+        }
+
+        private void dgvSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

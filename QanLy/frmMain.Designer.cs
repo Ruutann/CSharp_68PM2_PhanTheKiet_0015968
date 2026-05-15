@@ -34,6 +34,8 @@
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlSinhVien = new System.Windows.Forms.Panel();
+            this.pnlLopHoc = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.txtMaSvs = new System.Windows.Forms.Label();
@@ -46,6 +48,11 @@
             this.txtHoT = new System.Windows.Forms.Label();
             this.textHoTen = new System.Windows.Forms.TextBox();
             this.dgvSinhVien = new System.Windows.Forms.DataGridView();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -87,6 +94,7 @@
             // 
             // đăngXuấtToolStripMenuItem
             // 
+            this.đăngXuấtToolStripMenuItem.BackColor = System.Drawing.Color.Red;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(209, 52);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
@@ -102,6 +110,7 @@
             // 
             // pnlSinhVien
             // 
+            this.pnlSinhVien.Controls.Add(this.button1);
             this.pnlSinhVien.Controls.Add(this.groupBox1);
             this.pnlSinhVien.Controls.Add(this.dgvSinhVien);
             this.pnlSinhVien.Controls.Add(this.label2);
@@ -110,11 +119,30 @@
             this.pnlSinhVien.Controls.Add(this.button3);
             this.pnlSinhVien.Controls.Add(this.button2);
             this.pnlSinhVien.Controls.Add(this.Add);
+            this.pnlSinhVien.Controls.Add(this.pnlLopHoc);
             this.pnlSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSinhVien.Location = new System.Drawing.Point(0, 0);
             this.pnlSinhVien.Name = "pnlSinhVien";
             this.pnlSinhVien.Size = new System.Drawing.Size(2073, 1231);
             this.pnlSinhVien.TabIndex = 0;
+            // 
+            // pnlLopHoc
+            // 
+            this.pnlLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLopHoc.Location = new System.Drawing.Point(0, 0);
+            this.pnlLopHoc.Name = "pnlLopHoc";
+            this.pnlLopHoc.Size = new System.Drawing.Size(2073, 1231);
+            this.pnlLopHoc.TabIndex = 40;
+            this.pnlLopHoc.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1301, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 83);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -226,12 +254,54 @@
             // 
             this.dgvSinhVien.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSV,
+            this.HoTen,
+            this.Gioitinh,
+            this.NgaySinh,
+            this.Lop});
             this.dgvSinhVien.Location = new System.Drawing.Point(731, 134);
             this.dgvSinhVien.Name = "dgvSinhVien";
             this.dgvSinhVien.RowHeadersWidth = 123;
             this.dgvSinhVien.RowTemplate.Height = 46;
             this.dgvSinhVien.Size = new System.Drawing.Size(1267, 836);
             this.dgvSinhVien.TabIndex = 37;
+            this.dgvSinhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellContentClick);
+            // 
+            // MaSV
+            // 
+            this.MaSV.HeaderText = "Mã SV";
+            this.MaSV.MinimumWidth = 15;
+            this.MaSV.Name = "MaSV";
+            this.MaSV.Width = 300;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.MinimumWidth = 15;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 300;
+            // 
+            // Gioitinh
+            // 
+            this.Gioitinh.HeaderText = "Giới tính";
+            this.Gioitinh.MinimumWidth = 15;
+            this.Gioitinh.Name = "Gioitinh";
+            this.Gioitinh.Width = 300;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.MinimumWidth = 15;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 300;
+            // 
+            // Lop
+            // 
+            this.Lop.HeaderText = "Lớp";
+            this.Lop.MinimumWidth = 15;
+            this.Lop.Name = "Lop";
+            this.Lop.Width = 300;
             // 
             // label2
             // 
@@ -345,5 +415,12 @@
         private System.Windows.Forms.Label txtHoT;
         private System.Windows.Forms.TextBox textHoTen;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
+        private System.Windows.Forms.Panel pnlLopHoc;
     }
 }
