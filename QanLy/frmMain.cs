@@ -50,18 +50,64 @@ namespace QanLy
         {
 
         }
-        private void menuQuanLySV_Click(object sender, EventArgs e)
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        // Khi mới mở app, cho hiện Panel Sinh viên, ẩn Lớp học
+        private void frmMain_Load(object sender, EventArgs e)
         {
             pnlSinhVien.Visible = true;
             pnlLopHoc.Visible = false;
             pnlSinhVien.BringToFront(); // Đưa panel sinh viên lên trên cùng
+                                        // Cấu trúc bảng Lớp học
+            dtLopHoc.Columns.Add("MaID");
+            dtLopHoc.Columns.Add("MaLop");
+            dtLopHoc.Columns.Add("TenLop");
+            dtLopHoc.Columns.Add("GhiChu");
+
+            // Dữ liệu mẫu cho Lớp
+            dtLopHoc.Rows.Add("1", "68PM1", "Lớp 68PM1", "Phòng 201");
+            dtLopHoc.Rows.Add("2", "68PM2", "Lớp 68PM2", "Phòng 202");
+
+
+            // Cấu trúc bảng Sinh viên
+            dtSinhVien.Columns.Add("MaSV");
+            dtSinhVien.Columns.Add("HoTen");
+            dtSinhVien.Columns.Add("GioiTinh");
+            dtSinhVien.Columns.Add("NgaySinh");
+            dtSinhVien.Columns.Add("Lop");
+            dgvSinhVien.DataSource = dtSinhVien;
+
         }
 
-        private void menuQuanLyLop_Click(object sender, EventArgs e)
+        // Bấm Menu Quản lý Sinh viên
+        private void menuSV_Click(object sender, EventArgs e)
+        {
+            pnlSinhVien.Visible = true;
+            pnlLopHoc.Visible = false;
+            pnlSinhVien.BringToFront(); // Đưa nó lên trên cùng
+        }
+
+        // Bấm Menu Quản lý Lớp
+        private void menuLop_Click(object sender, EventArgs e)
         {
             pnlLopHoc.Visible = true;
             pnlSinhVien.Visible = false;
             pnlLopHoc.BringToFront();
         }
+
+        // Nút "Xem danh sách sinh viên" ở trong Panel Lớp học
+        private void btnSwitchToSV_Click(object sender, EventArgs e)
+        {
+            // Gọi lại hàm xử lý click menu ở trên
+            menuSV_Click(null, null);
+        }
+        // Khai báo bảng dữ liệu
+        DataTable dtSinhVien = new DataTable();
+        DataTable dtLopHoc = new DataTable();
+
+
     }
 }
