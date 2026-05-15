@@ -45,6 +45,14 @@ namespace QanLy
                 MessageBox.Show("Đăng nhập thất bại!", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            if (username == "0015968@st.huce.edu.vn" && password == "0015968")
+            {
+                MessageBox.Show("Đăng nhập thành công!");
+                this.Hide(); // Ẩn form đăng nhập
+                frmMain main = new frmMain();
+                main.ShowDialog(); // Mở form quản lý
+                this.Close(); // Đóng hẳn form đăng nhập sau khi main đóng
+            }
         }
     }
 }
