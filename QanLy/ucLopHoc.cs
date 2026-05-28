@@ -10,10 +10,8 @@ using System.Windows.Forms;
 
 namespace QanLy
 {
-    // Đảm bảo lớp mang tên ucLopHoc và kế thừa từ định dạng UserControl
     public partial class ucLopHoc : UserControl
     {
-        // Khai báo bảng dữ liệu toàn cục lưu trong bộ nhớ cho lớp học
         DataTable dtLopHoc = new DataTable();
 
         public ucLopHoc()
@@ -21,10 +19,8 @@ namespace QanLy
             InitializeComponent();
         }
 
-        // Sự kiện tự động chạy khi UserControl được tải lên màn hình
         private void ucLopHoc_Load(object sender, EventArgs e)
         {
-            // Kiểm tra cấu trúc nếu chưa có thì tạo các cột dữ liệu
             if (dtLopHoc.Columns.Count == 0)
             {
                 dtLopHoc.Columns.Add("MaID");
@@ -32,7 +28,6 @@ namespace QanLy
                 dtLopHoc.Columns.Add("TenLop");
                 dtLopHoc.Columns.Add("GhiChu");
 
-                // Thêm các bản ghi dữ liệu mẫu ban đầu
                 dtLopHoc.Rows.Add("1", "68PM1", "Lớp 68PM1", "Phòng 201");
                 dtLopHoc.Rows.Add("2", "68PM2", "Lớp 68PM2", "Phòng 202");
             }
@@ -47,7 +42,6 @@ namespace QanLy
                 return;
             }
 
-            // Kiểm tra trùng lặp Mã ID hoặc Mã Lớp trong danh sách
             foreach (DataRow row in dtLopHoc.Rows)
             {
                 if (row["MaID"].ToString() == txtMaID.Text || row["MaLop"].ToString() == txtMaLop.Text)
@@ -115,7 +109,7 @@ namespace QanLy
             txtTenLop.Clear();
             txtGhiChu.Clear();
             txtMaID.Focus();
-            dgvLopHoc.DataSource = dtLopHoc; // Reset bảng hiển thị về dữ liệu gốc
+            dgvLopHoc.DataSource = dtLopHoc;
         }
 
         public void btnTimLop_Click(object sender, EventArgs e)

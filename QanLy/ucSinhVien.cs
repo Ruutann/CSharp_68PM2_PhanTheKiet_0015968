@@ -10,10 +10,8 @@ using System.Windows.Forms;
 
 namespace QanLy
 {
-    // BẮT BUỘC lớp phải là ucSinhVien và kế thừa từ UserControl
     public partial class ucSinhVien : UserControl
     {
-        // Khai báo bảng dữ liệu toàn cục lưu trong bộ nhớ cho Sinh viên
         DataTable dtSinhVien = new DataTable();
 
         public ucSinhVien()
@@ -21,7 +19,6 @@ namespace QanLy
             InitializeComponent();
         }
 
-        // Sự kiện chạy khi màn hình Sinh viên được tải lên
         private void ucSinhVien_Load(object sender, EventArgs e)
         {
             if (dtSinhVien.Columns.Count == 0)
