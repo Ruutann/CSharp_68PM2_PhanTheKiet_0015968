@@ -33,8 +33,8 @@
             this.quảnLýLớpHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.ucSV = new QanLy.ucSinhVien();
             this.ucLH = new QanLy.ucLopHoc();
+            this.ucSV = new QanLy.ucSinhVien();
             this.menuStrip1.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.SuspendLayout();
@@ -49,21 +49,21 @@
             this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2073, 56);
+            this.menuStrip1.Size = new System.Drawing.Size(2073, 72);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // quảnLýSinhViênToolStripMenuItem
             // 
             this.quảnLýSinhViênToolStripMenuItem.Name = "quảnLýSinhViênToolStripMenuItem";
-            this.quảnLýSinhViênToolStripMenuItem.Size = new System.Drawing.Size(318, 52);
+            this.quảnLýSinhViênToolStripMenuItem.Size = new System.Drawing.Size(318, 60);
             this.quảnLýSinhViênToolStripMenuItem.Text = "Quản lý sinh viên";
             this.quảnLýSinhViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýSinhViênToolStripMenuItem_Click);
             // 
             // quảnLýLớpHọcToolStripMenuItem
             // 
             this.quảnLýLớpHọcToolStripMenuItem.Name = "quảnLýLớpHọcToolStripMenuItem";
-            this.quảnLýLớpHọcToolStripMenuItem.Size = new System.Drawing.Size(299, 52);
+            this.quảnLýLớpHọcToolStripMenuItem.Size = new System.Drawing.Size(299, 60);
             this.quảnLýLớpHọcToolStripMenuItem.Text = "Quản lý lớp học";
             this.quảnLýLớpHọcToolStripMenuItem.Click += new System.EventHandler(this.quảnLýLớpHọcToolStripMenuItem_Click);
             // 
@@ -71,7 +71,7 @@
             // 
             this.đăngXuấtToolStripMenuItem.BackColor = System.Drawing.Color.Red;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(209, 52);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(209, 60);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -80,26 +80,26 @@
             this.pnlContent.Controls.Add(this.ucLH);
             this.pnlContent.Controls.Add(this.ucSV);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 56);
+            this.pnlContent.Location = new System.Drawing.Point(0, 72);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(2073, 1231);
+            this.pnlContent.Size = new System.Drawing.Size(2073, 1215);
             this.pnlContent.TabIndex = 2;
-            // 
-            // ucSV
-            // 
-            this.ucSV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucSV.Location = new System.Drawing.Point(0, 0);
-            this.ucSV.Name = "ucSV";
-            this.ucSV.Size = new System.Drawing.Size(2073, 1231);
-            this.ucSV.TabIndex = 0;
             // 
             // ucLH
             // 
             this.ucLH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucLH.Location = new System.Drawing.Point(0, 0);
             this.ucLH.Name = "ucLH";
-            this.ucLH.Size = new System.Drawing.Size(2073, 1231);
+            this.ucLH.Size = new System.Drawing.Size(2073, 1215);
             this.ucLH.TabIndex = 1;
+            // 
+            // ucSV
+            // 
+            this.ucSV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSV.Location = new System.Drawing.Point(0, 0);
+            this.ucSV.Name = "ucSV";
+            this.ucSV.Size = new System.Drawing.Size(2073, 1215);
+            this.ucSV.TabIndex = 0;
             // 
             // frmMain
             // 

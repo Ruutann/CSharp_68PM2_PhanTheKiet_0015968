@@ -42,11 +42,6 @@
             this.txtHoT = new System.Windows.Forms.Label();
             this.textHoTen = new System.Windows.Forms.TextBox();
             this.dgvSinhVien = new System.Windows.Forms.DataGridView();
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnLamMoiSV = new System.Windows.Forms.Button();
@@ -109,6 +104,7 @@
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.Size = new System.Drawing.Size(500, 44);
             this.txtMaSV.TabIndex = 29;
+            this.txtMaSV.TextChanged += new System.EventHandler(this.txtMaSV_TextChanged);
             // 
             // txtMaSvs
             // 
@@ -194,53 +190,13 @@
             // 
             this.dgvSinhVien.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaSV,
-            this.HoTen,
-            this.Gioitinh,
-            this.NgaySinh,
-            this.Lop});
             this.dgvSinhVien.Location = new System.Drawing.Point(731, 134);
             this.dgvSinhVien.Name = "dgvSinhVien";
             this.dgvSinhVien.RowHeadersWidth = 123;
             this.dgvSinhVien.RowTemplate.Height = 46;
             this.dgvSinhVien.Size = new System.Drawing.Size(1267, 836);
             this.dgvSinhVien.TabIndex = 37;
-            // 
-            // MaSV
-            // 
-            this.MaSV.HeaderText = "Mã SV";
-            this.MaSV.MinimumWidth = 15;
-            this.MaSV.Name = "MaSV";
-            this.MaSV.Width = 300;
-            // 
-            // HoTen
-            // 
-            this.HoTen.HeaderText = "Họ và tên";
-            this.HoTen.MinimumWidth = 15;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 300;
-            // 
-            // Gioitinh
-            // 
-            this.Gioitinh.HeaderText = "Giới tính";
-            this.Gioitinh.MinimumWidth = 15;
-            this.Gioitinh.Name = "Gioitinh";
-            this.Gioitinh.Width = 300;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.MinimumWidth = 15;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 300;
-            // 
-            // Lop
-            // 
-            this.Lop.HeaderText = "Lớp";
-            this.Lop.MinimumWidth = 15;
-            this.Lop.Name = "Lop";
-            this.Lop.Width = 300;
+            this.dgvSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellClick);
             // 
             // label2
             // 
@@ -268,6 +224,7 @@
             this.btnLamMoiSV.TabIndex = 33;
             this.btnLamMoiSV.Text = "Làm mới";
             this.btnLamMoiSV.UseVisualStyleBackColor = false;
+            this.btnLamMoiSV.Click += new System.EventHandler(this.btnLamMoiSV_Click);
             // 
             // btnXoaSV
             // 
@@ -279,6 +236,7 @@
             this.btnXoaSV.TabIndex = 32;
             this.btnXoaSV.Text = "Xoá";
             this.btnXoaSV.UseVisualStyleBackColor = false;
+            this.btnXoaSV.Click += new System.EventHandler(this.btnXoaSV_Click);
             // 
             // btnSuaSV
             // 
@@ -290,6 +248,7 @@
             this.btnSuaSV.TabIndex = 31;
             this.btnSuaSV.Text = "Sửa";
             this.btnSuaSV.UseVisualStyleBackColor = false;
+            this.btnSuaSV.Click += new System.EventHandler(this.btnSuaSV_Click);
             // 
             // btnThemSV
             // 
@@ -301,6 +260,7 @@
             this.btnThemSV.TabIndex = 30;
             this.btnThemSV.Text = "Thêm";
             this.btnThemSV.UseVisualStyleBackColor = false;
+            this.btnThemSV.Click += new System.EventHandler(this.btnThemSV_Click);
             // 
             // ucSinhVien
             // 
@@ -334,11 +294,6 @@
         private System.Windows.Forms.Label txtHoT;
         private System.Windows.Forms.TextBox textHoTen;
         private System.Windows.Forms.DataGridView dgvSinhVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnLamMoiSV;

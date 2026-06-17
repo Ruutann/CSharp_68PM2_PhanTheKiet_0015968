@@ -48,10 +48,6 @@
             this.btnXoaLop = new System.Windows.Forms.Button();
             this.btnSuaLop = new System.Windows.Forms.Button();
             this.btnThemLop = new System.Windows.Forms.Button();
-            this.MaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlLopHoc.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
@@ -74,6 +70,7 @@
             this.pnlLopHoc.Name = "pnlLopHoc";
             this.pnlLopHoc.Size = new System.Drawing.Size(2079, 1140);
             this.pnlLopHoc.TabIndex = 42;
+            this.pnlLopHoc.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLopHoc_Paint);
             // 
             // btnXemDSSV
             // 
@@ -189,11 +186,6 @@
             // 
             this.dgvLopHoc.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaID,
-            this.MaLop,
-            this.TenLop,
-            this.GhiChu});
             this.dgvLopHoc.Location = new System.Drawing.Point(719, 176);
             this.dgvLopHoc.Name = "dgvLopHoc";
             this.dgvLopHoc.RowHeadersWidth = 123;
@@ -201,6 +193,7 @@
             this.dgvLopHoc.ShowCellToolTips = false;
             this.dgvLopHoc.Size = new System.Drawing.Size(1267, 836);
             this.dgvLopHoc.TabIndex = 46;
+            this.dgvLopHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellClick);
             // 
             // label10
             // 
@@ -228,6 +221,7 @@
             this.btnLamMoiLop.TabIndex = 43;
             this.btnLamMoiLop.Text = "Làm mới";
             this.btnLamMoiLop.UseVisualStyleBackColor = false;
+            this.btnLamMoiLop.Click += new System.EventHandler(this.btnLamMoiLop_Click);
             // 
             // btnXoaLop
             // 
@@ -239,6 +233,7 @@
             this.btnXoaLop.TabIndex = 42;
             this.btnXoaLop.Text = "Xoá";
             this.btnXoaLop.UseVisualStyleBackColor = false;
+            this.btnXoaLop.Click += new System.EventHandler(this.btnXoaLop_Click);
             // 
             // btnSuaLop
             // 
@@ -250,6 +245,7 @@
             this.btnSuaLop.TabIndex = 41;
             this.btnSuaLop.Text = "Sửa";
             this.btnSuaLop.UseVisualStyleBackColor = false;
+            this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
             // 
             // btnThemLop
             // 
@@ -261,34 +257,7 @@
             this.btnThemLop.TabIndex = 40;
             this.btnThemLop.Text = "Thêm";
             this.btnThemLop.UseVisualStyleBackColor = false;
-            // 
-            // MaID
-            // 
-            this.MaID.HeaderText = "Mã ID";
-            this.MaID.MinimumWidth = 15;
-            this.MaID.Name = "MaID";
-            this.MaID.Width = 300;
-            // 
-            // MaLop
-            // 
-            this.MaLop.HeaderText = "Mã Lớp";
-            this.MaLop.MinimumWidth = 15;
-            this.MaLop.Name = "MaLop";
-            this.MaLop.Width = 300;
-            // 
-            // TenLop
-            // 
-            this.TenLop.HeaderText = "Tên Lớp";
-            this.TenLop.MinimumWidth = 15;
-            this.TenLop.Name = "TenLop";
-            this.TenLop.Width = 300;
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.MinimumWidth = 15;
-            this.GhiChu.Name = "GhiChu";
-            this.GhiChu.Width = 300;
+            this.btnThemLop.Click += new System.EventHandler(this.btnThemLop_Click);
             // 
             // ucLopHoc
             // 
@@ -328,9 +297,5 @@
         private System.Windows.Forms.Button btnXoaLop;
         private System.Windows.Forms.Button btnSuaLop;
         private System.Windows.Forms.Button btnThemLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
     }
 }
