@@ -178,7 +178,36 @@ namespace QanLy
             }
         }
 
-        
+        // 4. CHỨC NĂNG XÓA
+        public void btnXoaSV_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaSV.Text.Trim())) return;
+
+            DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa sinh viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        string deleteQuery = "DELETE FROM Students WHERE MSSV = @MSSV";
+                        SqlCommand cmd = new SqlCommand(deleteQuery, conn);
+                        cmd.Parameters.AddWithValue("@MSSV", txtMaSV.Text.Trim());
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Xóa sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LoadData();
+                        btnLamMoiSV_Click(null, null);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa: " + ex.Message);
+                }
+            }
+        }
 
         // 5. CHỨC NĂNG LÀM MỚI FORM NHẬP LIỆU
         public void btnLamMoiSV_Click(object sender, EventArgs e)
