@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlLopHoc = new System.Windows.Forms.Panel();
-            this.btnXemDSSV = new System.Windows.Forms.Button();
+            this.btnXemDanhSach = new System.Windows.Forms.Button();
             this.btnTimLop = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             // 
             // pnlLopHoc
             // 
-            this.pnlLopHoc.Controls.Add(this.btnXemDSSV);
+            this.pnlLopHoc.Controls.Add(this.btnXemDanhSach);
             this.pnlLopHoc.Controls.Add(this.btnTimLop);
             this.pnlLopHoc.Controls.Add(this.groupBox2);
             this.pnlLopHoc.Controls.Add(this.dgvLopHoc);
@@ -72,15 +72,16 @@
             this.pnlLopHoc.TabIndex = 42;
             this.pnlLopHoc.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLopHoc_Paint);
             // 
-            // btnXemDSSV
+            // btnXemDanhSach
             // 
-            this.btnXemDSSV.BackColor = System.Drawing.Color.Teal;
-            this.btnXemDSSV.Location = new System.Drawing.Point(74, 992);
-            this.btnXemDSSV.Name = "btnXemDSSV";
-            this.btnXemDSSV.Size = new System.Drawing.Size(503, 108);
-            this.btnXemDSSV.TabIndex = 49;
-            this.btnXemDSSV.Text = "Xem danh sách sinh viên";
-            this.btnXemDSSV.UseVisualStyleBackColor = false;
+            this.btnXemDanhSach.BackColor = System.Drawing.Color.Teal;
+            this.btnXemDanhSach.Location = new System.Drawing.Point(74, 992);
+            this.btnXemDanhSach.Name = "btnXemDanhSach";
+            this.btnXemDanhSach.Size = new System.Drawing.Size(503, 108);
+            this.btnXemDanhSach.TabIndex = 49;
+            this.btnXemDanhSach.Text = "Xem danh sách sinh viên";
+            this.btnXemDanhSach.UseVisualStyleBackColor = false;
+            this.btnXemDanhSach.Click += new System.EventHandler(this.btnXemDanhSach_Click);
             // 
             // btnTimLop
             // 
@@ -185,6 +186,7 @@
             // 
             // dgvLopHoc
             // 
+            this.dgvLopHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLopHoc.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLopHoc.Location = new System.Drawing.Point(719, 176);
@@ -279,7 +281,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlLopHoc;
-        private System.Windows.Forms.Button btnXemDSSV;
+        private System.Windows.Forms.Button btnXemDanhSach;
         private System.Windows.Forms.Button btnTimLop;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtGhiChu;

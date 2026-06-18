@@ -236,5 +236,22 @@ namespace QanLy
         {
 
         }
+
+        private void btnXemDanhSach_Click(object sender, EventArgs e)
+        {
+            string maLop = txtMaLop.Text.Trim();
+
+            if (string.IsNullOrEmpty(maLop))
+            {
+                MessageBox.Show("Vui lòng click chọn một lớp học từ bảng danh sách trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            frmDanhSachSV cuaSoMoi = new frmDanhSachSV(maLop);
+
+            cuaSoMoi.StartPosition = FormStartPosition.CenterScreen;
+
+            cuaSoMoi.ShowDialog();
+        }
     }
 }
