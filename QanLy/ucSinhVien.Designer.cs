@@ -78,6 +78,7 @@
             this.btnTimSV.TabIndex = 39;
             this.btnTimSV.Text = "Tìm";
             this.btnTimSV.UseVisualStyleBackColor = true;
+            this.btnTimSV.Click += new System.EventHandler(this.btnTimSV_Click);
             // 
             // groupBox1
             // 

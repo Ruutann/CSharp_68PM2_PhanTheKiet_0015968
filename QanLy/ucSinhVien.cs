@@ -220,7 +220,7 @@ namespace QanLy
             txtMaSV.Focus();
         }
 
-        // 6. SỰ KIỆN CLICK VÀO DÒNG TRÊN BẢNG ĐỂ HIỂN THỊ NGƯỢC LÊN FORM NHẬP LIỆU
+        // SỰ KIỆN CLICK VÀO DÒNG TRÊN BẢNG ĐỂ HIỂN THỊ NGƯỢC LÊN FORM NHẬP LIỆU
         
 
         private void dgvSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -264,6 +264,47 @@ namespace QanLy
                     dtpNgaySinh.Value = DateTime.Now;
 
                 cbLop.Text = row.Cells["ClassId"].Value?.ToString();
+            }
+        }
+
+        public void btnTimSV_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKiem.Text.Trim();
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                LoadData();
+                return;
+            }
+
+            try
+            {
+                string connectionString = @"Data Source=DESKTOP-EVUFRLE\SQLEXPRESS;Initial Catalog=QLSinhVienCSharp;Integrated Security=True";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT MSSV, FullName, DateOfBirth, Gender, ClassId FROM Students " +
+                                   "WHERE MSSV LIKE @keyword OR FullName LIKE @keyword";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+
+                    da.SelectCommand.Parameters.AddWithValue("@keyword", "%" + tuKhoa + "%");
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvSinhVien.AutoGenerateColumns = false;
+
+                    dgvSinhVien.DataSource = dt;
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy sinh viên nào khớp với từ khóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi thực hiện tìm kiếm: " + ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
