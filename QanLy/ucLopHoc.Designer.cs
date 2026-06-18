@@ -30,7 +30,7 @@
         {
             this.pnlLopHoc = new System.Windows.Forms.Panel();
             this.btnXemDSSV = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnTimLop = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.txtTenLop = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             // pnlLopHoc
             // 
             this.pnlLopHoc.Controls.Add(this.btnXemDSSV);
-            this.pnlLopHoc.Controls.Add(this.button5);
+            this.pnlLopHoc.Controls.Add(this.btnTimLop);
             this.pnlLopHoc.Controls.Add(this.groupBox2);
             this.pnlLopHoc.Controls.Add(this.dgvLopHoc);
             this.pnlLopHoc.Controls.Add(this.label10);
@@ -82,15 +82,16 @@
             this.btnXemDSSV.Text = "Xem danh sách sinh viên";
             this.btnXemDSSV.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnTimLop
             // 
-            this.button5.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button5.Location = new System.Drawing.Point(1292, 69);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(191, 83);
-            this.button5.TabIndex = 48;
-            this.button5.Text = "Tìm";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnTimLop.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTimLop.Location = new System.Drawing.Point(1292, 69);
+            this.btnTimLop.Name = "btnTimLop";
+            this.btnTimLop.Size = new System.Drawing.Size(191, 83);
+            this.btnTimLop.TabIndex = 48;
+            this.btnTimLop.Text = "Tìm";
+            this.btnTimLop.UseVisualStyleBackColor = false;
+            this.btnTimLop.Click += new System.EventHandler(this.btnTimLop_Click);
             // 
             // groupBox2
             // 
@@ -279,7 +280,7 @@
 
         private System.Windows.Forms.Panel pnlLopHoc;
         private System.Windows.Forms.Button btnXemDSSV;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnTimLop;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.TextBox txtTenLop;
